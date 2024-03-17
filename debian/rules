@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+# Kopiere main.py (als serv-guy) in den /bin/-Ordner
+	mkdir -p $(CURDIR)/debian/fterm/bin
+	cp $(CURDIR)/fterm.sh $(CURDIR)/debian/fterm/bin/fterm
+# Kopiere den gesamten Inhalt des src-Verzeichnisses in das Installationsverzeichnis
+	mkdir -p $(CURDIR)/debian/fterm/usr/share/fterm/src
+	cp -R $(CURDIR)/src/. $(CURDIR)/debian/fterm/usr/share/fterm/src

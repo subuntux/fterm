@@ -1,0 +1,11 @@
+Source: fterm
+Section: utils
+Priority: important
+Maintainer: Alexander Krefting <kakrefting@gmail.com>
+Build-Depends: debhelper-compat (= 12)
+
+Package: fterm
+Architecture: all
+Depends: bash, wget
+Description: root simulator
+ A simulata root: Warning, this is not a real Root. Fterm is only an simulator with few own commands
